@@ -1,6 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <Import Project="..\..\configureawait.props"/>
   <Import Project="..\..\common.props"/>
 
   <PropertyGroup>
@@ -17,7 +16,7 @@
     </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Account\J3space.Abp.Account.Web\J3space.Abp.Account.Web.csproj"/>
+    <ProjectReference Include="..\..\..\J3space.Abp.Account\src\J3space.Abp.Account.Web\J3space.Abp.Account.Web.csproj"/>
     <ProjectReference Include="..\J3space.Abp.IdentityServer.Application.Contracts\J3space.Abp.IdentityServer.Application.Contracts.csproj"/>
   </ItemGroup>
 
