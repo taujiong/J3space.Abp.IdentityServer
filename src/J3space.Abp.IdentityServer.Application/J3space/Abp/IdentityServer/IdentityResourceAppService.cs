@@ -41,15 +41,6 @@ namespace J3space.Abp.IdentityServer
             );
         }
 
-        public virtual async Task<ListResultDto<IdentityResourceDto>> GetAllListAsync()
-        {
-            var list = await _resourceRepository.GetListAsync();
-
-            return new ListResultDto<IdentityResourceDto>(
-                ObjectMapper.Map<List<IdentityResource>, List<IdentityResourceDto>>(list)
-            );
-        }
-
         public virtual async Task<IdentityResourceDto> GetAsync(Guid id)
         {
             var identityResource = await _resourceRepository.FindAsync(id);

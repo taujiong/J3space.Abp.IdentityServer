@@ -11,7 +11,6 @@ namespace J3space.Abp.IdentityServer.IdentityResources
         public Task<PagedResultDto<IdentityResourceDto>> GetListAsync(
             PagedAndSortedResultRequestDto input);
 
-        public Task<ListResultDto<IdentityResourceDto>> GetAllListAsync();
         public Task<IdentityResourceDto> GetAsync(Guid id);
         public Task<IdentityResourceDto> CreateAsync(IdentityResourceCreateUpdateDto input);
 

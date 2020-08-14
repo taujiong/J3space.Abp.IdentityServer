@@ -45,15 +45,6 @@ namespace J3space.Abp.IdentityServer
             );
         }
 
-        public virtual async Task<ListResultDto<ClientDto>> GetAllListAsync()
-        {
-            var list = await _clientRepository.GetListAsync();
-
-            return new ListResultDto<ClientDto>(
-                ObjectMapper.Map<List<Client>, List<ClientDto>>(list)
-            );
-        }
-
         public virtual async Task<ClientDto> GetAsync(Guid id)
         {
             var client = await _clientRepository.FindAsync(id);
@@ -90,6 +81,7 @@ namespace J3space.Abp.IdentityServer
                 : input.Description;
             client.RequireConsent = input.RequireConsent;
             client.LogoUri = input.LogoUri;
+            client.Enabled = input.Enabled;
 
             #region 常用属性更新
 

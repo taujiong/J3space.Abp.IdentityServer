@@ -27,13 +27,6 @@ namespace J3space.Abp.IdentityServer
         }
 
         [HttpGet]
-        [Route("all")]
-        public virtual Task<ListResultDto<ApiResourceDto>> GetAllListAsync()
-        {
-            return _appService.GetAllListAsync();
-        }
-
-        [HttpGet]
         [Route("{id}")]
         public virtual Task<ApiResourceDto> GetAsync(Guid id)
         {

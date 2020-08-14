@@ -11,7 +11,6 @@ namespace J3space.Abp.IdentityServer.ApiResources
         public Task<PagedResultDto<ApiResourceDto>> GetListAsync(
             PagedAndSortedResultRequestDto input);
 
-        public Task<ListResultDto<ApiResourceDto>> GetAllListAsync();
         public Task<ApiResourceDto> GetAsync(Guid id);
         public Task<ApiResourceDto> CreateAsync(ApiResourceCreateUpdateDto input);
         public Task<ApiResourceDto> UpdateAsync(Guid id, ApiResourceCreateUpdateDto input);

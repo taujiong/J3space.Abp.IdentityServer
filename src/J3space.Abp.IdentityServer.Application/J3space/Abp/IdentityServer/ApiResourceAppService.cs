@@ -41,15 +41,6 @@ namespace J3space.Abp.IdentityServer
             );
         }
 
-        public virtual async Task<ListResultDto<ApiResourceDto>> GetAllListAsync()
-        {
-            var list = await _apiResourceRepository.GetListAsync();
-
-            return new ListResultDto<ApiResourceDto>(
-                ObjectMapper.Map<List<ApiResource>, List<ApiResourceDto>>(list)
-            );
-        }
-
         public virtual async Task<ApiResourceDto> GetAsync(Guid id)
         {
             var apiResource = await _apiResourceRepository.FindAsync(id);
@@ -83,6 +74,7 @@ namespace J3space.Abp.IdentityServer
             apiResource.DisplayName = input.Description.IsNullOrEmpty()
                 ? input.Name
                 : input.DisplayName;
+            apiResource.Enabled = input.Enabled;
 
             if (input.Scopes != null)
             {

@@ -15,6 +15,7 @@ namespace J3space.Abp.IdentityServer.Clients
         [StringLength(ClientConsts.DescriptionMaxLength)]
         public string Description { get; set; }
 
+        public bool Enabled { get; set; }
         public List<string> AllowedScopes { get; set; }
         public List<string> AllowedGrantTypes { get; set; }
         public List<string> AllowedCorsOrigins { get; set; }
