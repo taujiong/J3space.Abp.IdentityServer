@@ -17,6 +17,6 @@ namespace J3space.Abp.IdentityServer.IdentityResources
         public Task<IdentityResourceDto>
             UpdateAsync(Guid id, IdentityResourceCreateUpdateDto input);
 
-        public Task<JsonResult> DeleteAsync(Guid id);
+        public Task DeleteAsync(Guid id);
     }
 }

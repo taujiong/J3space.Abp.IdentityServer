@@ -48,7 +48,7 @@ namespace J3space.Abp.IdentityServer
 
         [HttpDelete]
         [Route("{id}")]
-        public virtual Task<JsonResult> DeleteAsync(Guid id)
+        public virtual Task DeleteAsync(Guid id)
         {
             return _identityResourceAppService.DeleteAsync(id);
         }

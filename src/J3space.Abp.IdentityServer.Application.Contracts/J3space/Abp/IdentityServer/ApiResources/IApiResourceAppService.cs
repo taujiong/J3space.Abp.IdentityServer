@@ -14,6 +14,6 @@ namespace J3space.Abp.IdentityServer.ApiResources
         public Task<ApiResourceDto> GetAsync(Guid id);
         public Task<ApiResourceDto> CreateAsync(ApiResourceCreateUpdateDto input);
         public Task<ApiResourceDto> UpdateAsync(Guid id, ApiResourceCreateUpdateDto input);
-        public Task<JsonResult> DeleteAsync(Guid id);
+        public Task DeleteAsync(Guid id);
     }
 }

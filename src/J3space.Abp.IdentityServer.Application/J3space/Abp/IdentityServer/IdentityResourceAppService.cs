@@ -99,18 +99,12 @@ namespace J3space.Abp.IdentityServer
         }
 
         [Authorize(IdentityServerPermissions.IdentityResource.Delete)]
-        public virtual async Task<JsonResult> DeleteAsync(Guid id)
+        public virtual async Task DeleteAsync(Guid id)
         {
-            var client = _resourceRepository.FindAsync(id);
+            var client = await _resourceRepository.FindAsync(id);
             if (client == null) throw new EntityNotFoundException(typeof(IdentityResource), id);
 
             await _resourceRepository.DeleteAsync(id);
-
-            return new JsonResult(new
-            {
-                StatusCodes = StatusCodes.Status200OK,
-                Message = "Delete Successfully"
-            });
         }
     }
 }

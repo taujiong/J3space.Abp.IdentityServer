@@ -12,6 +12,6 @@ namespace J3space.Abp.IdentityServer.Clients
         public Task<ClientDto> GetAsync(Guid id);
         public Task<ClientDto> CreateAsync(ClientCreateUpdateDto input);
         public Task<ClientDto> UpdateAsync(Guid id, ClientCreateUpdateDto input);
-        public Task<JsonResult> DeleteAsync(Guid id);
+        public Task DeleteAsync(Guid id);
     }
 }
