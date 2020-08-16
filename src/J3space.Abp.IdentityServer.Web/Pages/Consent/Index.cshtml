@@ -17,9 +17,9 @@
         name="viewport">
   <meta content="ie=edge"
         http-equiv="X-UA-Compatible">
-  <link rel="stylesheet"
+  <link asp-append-version="true"
         href="/Pages/Consent/consent.css"
-        asp-append-version="true">
+        rel="stylesheet">
   <title>Consent</title>
 </head>
 
@@ -30,9 +30,9 @@
   {
     <div class="client-logo">
       <div class="logo-container">
-        <img src="@Model.ClientInfo.ClientLogoUrl"
-             alt="ClientLogo"
-             class="logo">
+        <img alt="ClientLogo"
+             class="logo"
+             src="@Model.ClientInfo.ClientLogoUrl">
       </div>
       <div class="connection">
         <span class="line"></span>
@@ -67,10 +67,10 @@
   <div class="container-form">
     <form asp-page="/Consent/Index"
           method="post">
-      <input type="hidden"
-             asp-for="ReturnUrl" />
-      <input type="hidden"
-             asp-for="ReturnUrlHash" />
+      <input asp-for="ReturnUrl"
+             type="hidden" />
+      <input asp-for="ReturnUrlHash"
+             type="hidden" />
 
       <div class="scope">
         @if (!Model.ConsentInput.IdentityScopes.IsNullOrEmpty())

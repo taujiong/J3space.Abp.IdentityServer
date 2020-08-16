@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using J3space.Abp.IdentityServer.ApiResources;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Guids;
