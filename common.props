@@ -7,7 +7,7 @@
     <Description>An extension for Abp vnext IdentityServer module, adds CRUD methods for client, api resources and identity resources</Description>
 <!--    <PackageIconUrl>https://abp.io/assets/abp_nupkg.png</PackageIconUrl>-->
     <PackageProjectUrl>https://github.com/taujiong/J3space.Abp.IdentityServer.git</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/taujiong/J3space.Abp.IdentityServer/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/taujiong/J3space.Abp.IdentityServer.git</RepositoryUrl>
   </PropertyGroup>
