@@ -10,7 +10,7 @@ using Volo.Abp.VirtualFileSystem;
 namespace J3space.Abp.IdentityServer.Web
 {
     [DependsOn(
-        typeof(AbpAccountWebModule),
+        typeof(AbpAccountWebWrapperModule),
         typeof(AbpIdentityServerDomainModule)
     )]
     public class AbpIdentityServerWebModule : AbpModule
