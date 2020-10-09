@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.IdentityServer;
 using Volo.Abp.Modularity;
-using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 
 namespace J3space.Abp.IdentityServer.Web
@@ -35,11 +34,6 @@ namespace J3space.Abp.IdentityServer.Web
             {
                 options.FileSets.AddEmbedded<AbpIdentityServerWebModule>(
                     "J3space.Abp.IdentityServer.Web");
-            });
-
-            Configure<AbpNavigationOptions>(options =>
-            {
-                options.MenuContributors.Add(new AbpIdentityServerMainMenuContributor());
             });
 
             context.Services
