@@ -18,7 +18,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Settings;
 
-namespace J3space.Abp.IdentityServer.Web.Account
+namespace J3space.Abp.IdentityServer.Web.Pages.Account
 {
     [ExposeServices(typeof(LoginModel))]
     public class IdentityServerSupportedLoginModel : LoginModel

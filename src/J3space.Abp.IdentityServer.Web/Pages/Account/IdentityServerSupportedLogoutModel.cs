@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Identity;
 
-namespace J3space.Abp.IdentityServer.Web.Account
+namespace J3space.Abp.IdentityServer.Web.Pages.Account
 {
     [ExposeServices(typeof(LogoutModel))]
     public class IdentityServerSupportedLogoutModel : LogoutModel
