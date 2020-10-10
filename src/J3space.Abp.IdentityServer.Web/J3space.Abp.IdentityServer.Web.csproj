@@ -26,10 +26,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="Pages\Consent\*.js"/>
-      <EmbeddedResource Include="Pages\Consent\*.css"/>
-      <Content Remove="Pages\Consent\*.js"/>
-      <Content Remove="Pages\Consent\*.css"/>
+      <EmbeddedResource Include="wwwroot\**\*.js"/>
+      <EmbeddedResource Include="wwwroot\**\*.css"/>
+      <Content Remove="wwwroot\**\*.js"/>
+      <Content Remove="wwwroot\**\*.css"/>
     </ItemGroup>
 
 </Project>
