@@ -10,25 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace J3space.Abp.IdentityServer.Web.Pages.Consent
+namespace J3space.Abp.IdentityServer.Web.Pages.Account
 {
     public class ConsentModel : AbpPageModel
     {
-        [HiddenInput]
-        [BindProperty(SupportsGet = true)]
-        public string ReturnUrl { get; set; }
-
-        [HiddenInput]
-        [BindProperty(SupportsGet = true)]
-        public string ReturnUrlHash { get; set; }
-
-        [BindProperty]
-        public ConsentInputModel ConsentInput { get; set; }
-
-        public ClientInfoModel ClientInfo { get; set; }
+        private readonly IClientStore _clientStore;
 
         private readonly IIdentityServerInteractionService _interaction;
-        private readonly IClientStore _clientStore;
         private readonly IResourceStore _resourceStore;
 
         public ConsentModel(
@@ -40,6 +28,18 @@ namespace J3space.Abp.IdentityServer.Web.Pages.Consent
             _clientStore = clientStore;
             _resourceStore = resourceStore;
         }
+
+        [HiddenInput]
+        [BindProperty(SupportsGet = true)]
+        public string ReturnUrl { get; set; }
+
+        [HiddenInput]
+        [BindProperty(SupportsGet = true)]
+        public string ReturnUrlHash { get; set; }
+
+        [BindProperty] public ConsentInputModel ConsentInput { get; set; }
+
+        public ClientInfoModel ClientInfo { get; set; }
 
         public virtual async Task<IActionResult> OnGetAsync()
         {
@@ -58,7 +58,8 @@ namespace J3space.Abp.IdentityServer.Web.Pages.Consent
             var resources = await _resourceStore.FindEnabledResourcesByScopeAsync(request.ScopesRequested);
             if (resources == null || (!resources.IdentityResources.Any() && !resources.ApiResources.Any()))
             {
-                throw new ApplicationException($"No scopes matching: {request.ScopesRequested.Aggregate((x, y) => x + ", " + y)}");
+                throw new ApplicationException(
+                    $"No scopes matching: {request.ScopesRequested.Aggregate((x, y) => x + ", " + y)}");
             }
 
             ClientInfo = new ClientInfoModel(client);
@@ -67,7 +68,8 @@ namespace J3space.Abp.IdentityServer.Web.Pages.Consent
                 UserName = HttpContext.User.Identity.Name,
                 RememberConsent = true,
                 IdentityScopes = resources.IdentityResources.Select(x => CreateScopeViewModel(x, true)).ToList(),
-                ApiScopes = resources.ApiResources.SelectMany(x => x.Scopes).Select(x => CreateScopeViewModel(x, true)).ToList()
+                ApiScopes = resources.ApiResources.SelectMany(x => x.Scopes).Select(x => CreateScopeViewModel(x, true))
+                    .ToList()
             };
 
             if (resources.OfflineAccess)

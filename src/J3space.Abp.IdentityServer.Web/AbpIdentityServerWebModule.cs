@@ -1,4 +1,5 @@
-﻿using J3space.Abp.Account.Web;
+﻿using IdentityServer4.Configuration;
+using J3space.Abp.Account.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Identity.AspNetCore;
@@ -43,6 +44,8 @@ namespace J3space.Abp.IdentityServer.Web
                     o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
                 })
                 .AddIdentityCookies();
+
+            Configure<IdentityServerOptions>(options => { options.UserInteraction.ConsentUrl = "/Account/Consent"; });
         }
     }
 }

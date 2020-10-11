@@ -6,7 +6,7 @@
 @using Volo.Abp.AspNetCore.Mvc.AntiForgery
 @using Volo.Abp.Localization
 @using Volo.Abp.Ui.Branding
-@model J3space.Abp.IdentityServer.Web.Pages.Consent.ConsentModel
+@model J3space.Abp.IdentityServer.Web.Pages.Account.ConsentModel
 @{
   Layout = null;
   AbpAntiForgeryManager.SetCookie();
@@ -76,7 +76,7 @@
             </div>
           </div>
 
-          <form asp-page="/Consent/Index"
+          <form asp-page="/Account/Consent"
                 method="post">
             <input asp-for="ReturnUrl"
                    type="hidden" />
