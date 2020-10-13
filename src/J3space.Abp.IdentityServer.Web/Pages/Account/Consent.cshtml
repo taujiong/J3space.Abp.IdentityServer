@@ -78,10 +78,8 @@
 
           <form asp-page="/Account/Consent"
                 method="post">
-            <input asp-for="ReturnUrl"
-                   type="hidden" />
-            <input asp-for="ReturnUrlHash"
-                   type="hidden" />
+            <input asp-for="ReturnUrl" />
+            <input asp-for="ReturnUrlHash" />
 
             <div class="box is-radiusless mb-3 px-0 py-0">
               @if (!Model.ConsentInput.IdentityScopes.IsNullOrEmpty())
@@ -109,8 +107,7 @@
                           <span style="color: red">*</span>
                         }
                       </label>
-                      <input asp-for="@Model.ConsentInput.IdentityScopes[i].Name"
-                             type="hidden" />
+                      <input asp-for="@Model.ConsentInput.IdentityScopes[i].Name" />
                     </li>
                   }
                 </ul>
@@ -144,8 +141,7 @@
                           </span>
                         }
                       </label>
-                      <input asp-for="@Model.ConsentInput.ApiScopes[i].Name"
-                             type="hidden" />
+                      <input asp-for="@Model.ConsentInput.ApiScopes[i].Name" />
                     </li>
                   }
                 </ul>
